@@ -10,4 +10,15 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function submit(){
+
+    	return view('submit', ['data_for_view' => $list_array]);
+
+    public function show(){
+
+    	$lists = \App\Lists::all();
+		return view('welcome' compact('lists'));
+    }
+    }
 }

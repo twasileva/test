@@ -2,9 +2,6 @@
 use Illuminate\Http\Request;
 
 
-Route::get('/submit', function(){
-	return view('submit');
-});
 
 Route::post('/submit', function(Request $request) {
     $validator = Validator::make($request->all(), [
