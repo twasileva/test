@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-  Route::post('submit', ['as' => 'list.submit', 'uses'=> 'Controller@submit']);   
+Route::post('submit', ['as' => 'lists.submit', 'uses'=> 'Controller@submit']);   
 
-  Route::get('show', ['as' => 'list.show', 'uses' => 'Controller@show']);
+Route::get('show', ['as' => 'lists.show', 'uses' => 'Controller@show']);
 
 Auth::routes();
 

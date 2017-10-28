@@ -13,7 +13,7 @@ class TestServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        include __DIR__.'/../web.php';
+        include __DIR__.'../web.php';
     }
 
     /**

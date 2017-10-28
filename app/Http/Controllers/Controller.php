@@ -13,12 +13,30 @@ class Controller extends BaseController
 
     public function submit(){
 
+    	$validator = Validator::make($request->all(), [
+        'title' => 'required|max:255',
+        'img' => 'required|max:255',
+        'description' => 'required|max:255',
+   	 ]);
+    	if ($validator->fails()) {
+        	return back()
+	            ->withInput()
+	            ->withErrors($validator);
+		    }
+		    $lists = new \App\Lists;
+		    $lists->title = $request->title;
+		    $lists->img = $request->img;
+		    $lists->description = $request->description;
+		    $lists->save();
+		    return redirect('/');
+
     	return view('submit', ['data_for_view' => $list_array]);
+    }
 
     public function show(){
 
     	$lists = \App\Lists::all();
 		return view('welcome' compact('lists'));
-    }
+    
     }
 }
